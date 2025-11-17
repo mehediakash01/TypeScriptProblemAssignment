@@ -50,3 +50,16 @@ class Person {
     }
 }
  
+// problem4
+    type Book={
+
+            title:string,
+        rating:number
+    
+    }
+      
+const filterByRating=(items:Book[]):Book[]=>{
+ const filtered = items.filter(item=>item.rating>=4);
+ return filtered;
+  
+}
