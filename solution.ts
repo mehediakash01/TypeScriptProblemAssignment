@@ -1,4 +1,4 @@
-
+// problem1
 const formatValue=<T> (value:T)=>{
      if (typeof(value)==="string"){
 
@@ -25,10 +25,15 @@ const formatValue=<T> (value:T)=>{
 
 }
 
- console.log(formatValue('hello'));
- console.log(formatValue(5));
- console.log(formatValue(true));
 
+// problem2
+ const getLength=<T>(value:string|T[])=>{
+    if (typeof(value)==="string"){
+        return value.length;
+    }
+    else if (Array.isArray(value)){
+        return value.length;
+    }
 
-
+}
 
