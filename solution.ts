@@ -86,3 +86,18 @@ let activeUser = [];
 
 }
 
+// Problem 6:
+interface Books{
+    
+title :string;
+author: string;
+publishedYear: number;
+isAvailable: boolean
+}
+
+
+const printBookDetails = (value:Books)=>{
+   return console.log(`Title: ${value.title}, Author: ${value.author}, Published: ${value.publishedYear}, Available: ${value.isAvailable?'Yes':'No'}`);
+
+}
+
