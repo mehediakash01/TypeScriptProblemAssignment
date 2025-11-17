@@ -63,3 +63,26 @@ const filterByRating=(items:Book[]):Book[]=>{
  return filtered;
   
 }
+
+// problem5
+
+
+
+type User={
+    id:number;
+    name:string;
+    email:string;
+    isActive:boolean;
+}
+
+const filterActiveUsers = (users:User[])=>{
+let activeUser = [];
+    for(let user of users){
+       if (user.isActive===true){
+        activeUser.push(user)
+       }
+    }
+    return activeUser;
+
+}
+
