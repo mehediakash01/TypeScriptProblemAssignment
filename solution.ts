@@ -121,3 +121,29 @@ const getUniqueValues = <T extends string | number>(
 
   return arr;
 };
+
+
+// Problem 8:
+
+type Product ={
+    name:string;
+    price:number;
+    quantity:number;
+    discount?:number;
+}
+
+const calculateTotalPrice=(product:Product[]):number=>{
+ const totalPrice = product.map(p=>{
+    const discounted = p.discount ?? 0;
+    return p.price * p.quantity * (1 - discounted / 100);
+    
+ })
+
+ const sum = totalPrice.reduce((acc,currValue)=>{
+    return acc+currValue;
+
+ },0)
+ return sum;
+ 
+}
+
