@@ -1,26 +1,26 @@
-// problem1
-const formatValue = <T>(value: T) => {
+
+const formatValue = (value: string|number|boolean):string|number|boolean => {
   if (typeof value === "string") {
     return value.toUpperCase();
   } else if (typeof value === "number") {
     return value * 10;
-  } else if (typeof value === "boolean") {
-    if (value === true) {
-      return false;
-    } else return true;
+  } 
+  else{
+    return !value;
   }
 };
 
-// problem2
-const getLength = <T>(value: string | T[]) => {
+
+const getLength = <T>(value: string | T[]):number => {
   if (typeof value === "string") {
     return value.length;
   } else if (Array.isArray(value)) {
     return value.length;
   }
+  return 0;
 };
 
-// problem3
+
 class Person {
   name: string;
   age: number;
@@ -29,22 +29,22 @@ class Person {
     this.age = age;
   }
   getDetails() {
-    return "Name: ${this.name}, Age: ${this.age}";
+    return `Name: ${this.name}, Age: ${this.age}`;
   }
 }
 
-// problem4
-type Book = {
+
+type Books= {
   title: string;
   rating: number;
 };
 
-const filterByRating = (items: Book[]): Book[] => {
+const filterByRating = (items: Books[]): Books[] => {
   const filtered = items.filter((item) => item.rating >= 4);
   return filtered;
 };
 
-// problem5
+
 
 type User = {
   id: number;
@@ -63,15 +63,15 @@ const filterActiveUsers = (users: User[]) => {
   return activeUser;
 };
 
-// Problem 6:
-interface Books {
+
+interface Book {
   title: string;
   author: string;
   publishedYear: number;
   isAvailable: boolean;
 }
 
-const printBookDetails = (value: Books) => {
+const printBookDetails = (value: Book) => {
   return console.log(
     `Title: ${value.title}, Author: ${value.author}, Published: ${
       value.publishedYear
@@ -79,7 +79,7 @@ const printBookDetails = (value: Books) => {
   );
 };
 
-// Problem 7:
+
 
 const getUniqueValues = <T extends string | number>(
   arr1: T[],
@@ -123,7 +123,7 @@ const getUniqueValues = <T extends string | number>(
 };
 
 
-// Problem 8:
+
 
 type Product ={
     name:string;
